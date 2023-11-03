@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando contatos
         Funcionario funcionario = new Funcionario();
         funcionario.setEmail("funcionario@example.com");
         funcionario.setIdade(30);
@@ -20,18 +19,15 @@ public class Main {
         estudante.setAno(3);
         estudante.promoverAno();
 
-        // Criando a lista de contatos
         List<Pessoa> contatos = new ArrayList<>();
         contatos.add(funcionario);
         contatos.add(estudante);
 
-        // Criando a agenda e adicionando contatos
         Agenda agenda = new Agenda();
         for (Pessoa contato : contatos) {
             agenda.adicionarContato(contato);
         }
 
-        // Listando estudantes do último ano
         List<Estudante> estudantesUltimoAno = agenda.listarEstudantesDoUltimoAno();
         System.out.println("Estudantes do último ano:");
         for (Estudante estudanteUltimoAno : estudantesUltimoAno) {
@@ -41,7 +37,6 @@ public class Main {
             System.out.println("----------------------");
         }
 
-        // Calculando e exibindo a média de idade dos contatos
         double mediaIdade = agenda.calcularMediaIdade();
         System.out.println("Média de idade dos contatos: " + mediaIdade);
     }
